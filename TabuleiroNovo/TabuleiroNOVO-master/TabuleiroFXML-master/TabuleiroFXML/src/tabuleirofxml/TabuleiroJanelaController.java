@@ -119,17 +119,23 @@ public class TabuleiroJanelaController implements Initializable {
                 
                 if(event.getSource() instanceof ImageView) {//LEMBRAR BOTAR COMER
                     if(pegou==false){
+                        System.out.println("peça nova");
                         xvelho=((Peça) event.getSource()).getCoordX();
                         yvelho=((Peça) event.getSource()).getCoordY();
                         pegou=true;
-                    } else {
-                        
-                    if(Tab.CasaÉVermelha(((Peça) event.getSource()).getCoordX(), ((Peça) event.getSource()).getCoordY()) == true){
+                    } else if(pegou == true && Tab.CasaÉVermelha(((Peça) event.getSource()).getCoordX(), ((Peça) event.getSource()).getCoordY()) == true) {
                         
                         System.out.println("Come e apaga");
                         pegou=false;
-                    }
+                    
+                    } else {
+                        
+                        System.out.println("voltou a preto");
                         voltaCor(Tab);
+                        System.out.println("peça nova");
+                        xvelho=((Peça) event.getSource()).getCoordX();
+                        yvelho=((Peça) event.getSource()).getCoordY();
+                        pegou=true;
                     }
                     System.out.println(event.getSource());
                     System.out.println("é Peça");
