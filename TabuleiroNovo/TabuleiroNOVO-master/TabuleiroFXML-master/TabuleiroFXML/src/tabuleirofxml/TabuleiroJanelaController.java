@@ -111,13 +111,15 @@ public class TabuleiroJanelaController implements Initializable {
                     
                     if(tracado=true){
                     
-                    System.out.println("cor voltou a preto");
+                    System.out.println("!!!!!!!!cor voltou a preto!!!!!!!!\n");
                     voltaCor(Tab);
                     tracado=false;
                 }
                 }
                 
                 if(event.getSource() instanceof ImageView) {//LEMBRAR BOTAR COMER
+                    
+                    System.out.println("o evento é de imageView");
                     if(pegou==false){
                         System.out.println("peça nova");
                         xvelho=((Peça) event.getSource()).getCoordX();
@@ -130,7 +132,7 @@ public class TabuleiroJanelaController implements Initializable {
                     
                     } else {
                         
-                        System.out.println("voltou a preto");
+                        System.out.println("!!!!!cor voltou a preto!!!!!!!!!\n");
                         voltaCor(Tab);
                         System.out.println("peça nova");
                         xvelho=((Peça) event.getSource()).getCoordX();
